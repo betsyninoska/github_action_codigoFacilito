@@ -1,5 +1,17 @@
 name: Hola Mundo
-on:  [push, pull_request]
+
+# Hacer pull y request
+#on:  [push, pull_request]
+
+
+#para que haga pull y request en una rama en especifico
+on:  
+  push:
+    branches: 
+      - worflows
+  pull_request:
+    branches: 
+      - worflows
 
 jobs:
   hola:
