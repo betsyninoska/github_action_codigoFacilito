@@ -8,10 +8,10 @@ name: Hola Mundo
 on:  
   push:
     branches: 
-      - worflows
+      - workflows
   pull_request:
     branches: 
-      - worflows
+      - workflows
 
 jobs:
   hola:
@@ -19,7 +19,7 @@ jobs:
   
     steps:
       - name: Hola Mundo
-        run: echo "hola"
+        run: echo "hola, desde la rama workflows"
       
       - name: touch file
         run: touch hola.txt
