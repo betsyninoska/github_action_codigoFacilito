@@ -26,14 +26,14 @@ jobs:
         run: touch hola.txt
 
       - name: Set test
-        run:  echo "hola, hola nuevamente desde workflow" hola.txt  
+        run:  echo "hola, hola nuevamente desde workflow" >> hola.txt  
   other:
     runs-on: ubuntu-latest
     needs: [hola]
 
     steps:  
-      
-      - name: checkout
-        uses: actions/checkout@v4.1.7
-      - name: ls
-        uses: ls -la
+    - name: Checkout
+      uses: actions/checkout@v4.1.7
+
+    - name: LS
+      uses: ls -la
