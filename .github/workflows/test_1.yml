@@ -1,5 +1,5 @@
 name: Hola Mundo
-on:  [push]
+on:  [push, pull_request]
 
 jobs:
   hola:
@@ -7,4 +7,7 @@ jobs:
   
     steps:
       - name: Hola Mundo
-        run: echo "hola";
+        run: echo "hola"
+      
+      - name: touch file
+        run: touch hola.txt
