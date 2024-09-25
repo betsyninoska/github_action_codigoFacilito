@@ -33,4 +33,14 @@ jobs:
          
            - name: node version
              run: node --version
-         
+    
+    local-action:
+      runs-on: ubuntu-latest
+
+      steps: 
+        - name: Checkout
+          uses: actions/checkout@v4.1.7
+
+        - name: ls
+          uses: ./.github/actions/my-action
+        

@@ -1,0 +1,9 @@
+name: "My Action"
+description: "Este es la descripción del action"
+runs:
+  using: "composite"
+
+  steps:
+  - name: Saludo
+    run: echo "Betsy Ninoska los saluda"
+    shell: bash
