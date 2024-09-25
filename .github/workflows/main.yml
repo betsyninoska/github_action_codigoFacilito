@@ -4,6 +4,7 @@ jobs:
     test-build:
         runs-on: ubuntu-latest
 
+         # instalar directamente
          # steps:
          # - name:  ls
          #   run: |
