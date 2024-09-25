@@ -36,11 +36,10 @@ jobs:
     
     local-action:
         runs-on: ubuntu-latest
-
-      steps: 
+        steps: 
         - name: Checkout
           uses: actions/checkout@v4.1.7
 
         - name: ls
-          uses: ./.github/action/my-actions
+          uses: ./.github/actions/my-action
         
