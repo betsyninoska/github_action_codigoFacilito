@@ -41,5 +41,5 @@ jobs:
           uses: actions/checkout@v4.1.7
 
         - name: ls
-          uses: ./.github/action/my-actions/action.yml
+          uses: /.github/action/my-actions/action.yml
         
