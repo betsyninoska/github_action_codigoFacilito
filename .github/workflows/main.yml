@@ -26,8 +26,8 @@ jobs:
              uses: ls -la
          
 
-           - name: actions-setup-nodejs
-             uses: khulnasoft-lab/actions-setup-nodejs@v0.0.1
+           - name: Setup Node.js environment
+             uses: actions/setup-node@v4.0.4
          
            - name: node version
              uses: node --version
