@@ -1,9 +1,17 @@
 name: "My Action"
 description: "Este es la descripción del action"
+
+inputs:
+  message:
+    description: "El mensaje del print"
+    required: true
+    default: "Hola"
+
+
 runs:
   using: "composite"
 
   steps:
   - name: Saludo
-    run: echo "Betsy Ninoska los saluda"
+    run: echo "Hola ${{ inputs.message}}"
     shell: bash
