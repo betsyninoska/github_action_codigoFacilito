@@ -5,21 +5,12 @@ jobs:
     local-action:
         runs-on: ubuntu-latest
 
-        services:
+        env:
+          MY_VAR: Mi variable de entorno
 
-          mysql:
-            image: mysql:5.7
+        steps:
+          - name: Test
             env:
-              MYSQL_ROOT_PASSWORD: example
-            ports:
-              - 3306:3306
+              STEP_MY_VAR: variable nivel step
+            run: echo "Valor $STEP_MY_VAR"
           
-          redis:
-              image: redis
-              ports: 
-              - 6379:6379
-    
-              
-        steps: 
-        - name: test
-          run: ls
