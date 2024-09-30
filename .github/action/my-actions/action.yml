@@ -5,7 +5,7 @@ inputs:
   message:
     description: "El mensaje del print"
     required: true
-    default: "Hola"
+    default: "Hola este es el valor por defecto"
 
 
 runs:
