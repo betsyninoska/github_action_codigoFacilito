@@ -1,19 +1,15 @@
-name: test
+name: test1
 on: [push]
 jobs:
    
     local-action:
         runs-on: ubuntu-latest
 
-        env:
-          MY_VAR: Mi variable de entorno
-
         steps:
-          - name: Test
-            env:
-              STEP_MY_VAR: variable nivel step
-            run: echo "Valor " ${{vars.STEP_MY_VAR}}
-          
-          - name: Secret
-            run: echo "Secret es " ${{secrets.MYSECRET}}
-          
+          - name: LS
+            run: |
+             mkdir ~/ssh
+             echo "${{secrets.SSH_KEY}}" >> ~/ssh/id_rsa
+             chmod 600  ~/ssh/id_rsa
+             ssh-keyscan -h 127.0.1.1  >> ~/ssh/known:hosts
+             cat ~/ssh/known:hosts
