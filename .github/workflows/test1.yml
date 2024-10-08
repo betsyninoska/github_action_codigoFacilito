@@ -2,14 +2,29 @@ name: test1
 on: [push]
 jobs:
    
-    local-action:
+    larabel-test:
         runs-on: ubuntu-latest
+        
 
+        services:
+          mysql: 
+            image: mysql:8.0
+            ports: 
+            - 3606:3606
+            env: 
+              MYSQL_ROOT_PASSWORD: root
+              MYSQL_DATABASE: laravel 
         steps:
-          - name: LS
-            run: |
-             mkdir ~/ssh
-             echo "${{secrets.SSH_KEY}}" >> ~/ssh/id_rsa
-             chmod 600  ~/ssh/id_rsa
-             ssh-keyscan -h 127.0.1.1  >> ~/ssh/known:hosts
-             cat ~/ssh/known:hosts
+        - name: Checkout
+          uses: actions/checkout@v3
+
+        - name: Set up PHP
+          uses: shivammathur/setup-php@v2
+          with:
+            php-version: 8.2
+            extensions: mbstring, bcmath, pdo, pdo_mysql
+
+
+
+
+          
