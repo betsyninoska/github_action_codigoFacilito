@@ -2,4 +2,4 @@
 
 
 
- #Ejemplo de Workflows para variables y sercretos
+ #Ejemplo de Workflows trabajar con SSH colocandola en secretos
