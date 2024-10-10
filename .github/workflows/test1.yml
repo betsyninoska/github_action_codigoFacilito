@@ -26,12 +26,16 @@ jobs:
         - name: install packages
           run: composer install --no-interaction
 
-
+#Instalar la app
         - name: Set App
           run: cp -env-sample .env
         - name: Set key
           run: php artisan key:generate
         - name: Run test
+          id: test
           run: vendor/bin/phpunit
 
-          
+        - name: deploy
+          if: steps.test.outcome == 'success'
+          run: ls
+#          
