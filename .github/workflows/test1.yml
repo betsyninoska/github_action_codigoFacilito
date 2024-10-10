@@ -1,43 +1,10 @@
-name: test1
+name: Larave 
 on: [push]
 jobs:
    
     larabel-test:
-        runs-on: ubuntu-latest
+        runs-on: windows-2019
+        steps: 
+            - name: LS
+              run: dir
         
-
-        services:
-          mysql: 
-            image: mysql:8.0
-            ports: 
-            - 3606:3606
-            env: 
-              MYSQL_ROOT_PASSWORD: root
-              MYSQL_DATABASE: laravel 
-        steps:
-        - name: Checkout
-          uses: actions/checkout@v3
-
-        - name: Set up PHP
-          uses: shivammathur/setup-php@v2
-          with:
-            php-version: 8.2
-            extensions: mbstring, bcmath, pdo, pdo_mysql
-        - name: install packages
-          run: composer install --no-interaction
-
-#Instalar la app
-        - name: Set App
-          run: cp -env-sample .env
-        - name: Set key
-          run: php artisan key:generate
-        - name: Run test
-          id: test
-          run: vendor/bin/phpunit
-# log para debugsubir el archivo del log
-        - name: Artifact
-          uses: actions/upload-artifact@v4
-          with:
-              name: artifacts
-              path: | #si quiero colocar varios archivos coloco |
-                composer.json
